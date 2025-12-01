@@ -22,13 +22,13 @@ export default function ProfileScreen({ navigation }) {
 
   useEffect(() => {
     if (user) {
-      setFullName(user.fullName || '');
+      setFullName(user.full_name || '');
       setEmail(user.email || '');
       setPhone(user.phone || '');
       setDob(user.dob || '');
       setGender(user.gender || '');
       setAddress(user.address || '');
-      setImage(user.image || null);
+      setImage(user.profile_pic || null);
     }
   }, [user]);
 
@@ -43,7 +43,7 @@ export default function ProfileScreen({ navigation }) {
 
     try {
       const result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.Images, // deprecated warning will appear but works
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
         allowsEditing: true,
         quality: 1,
       });
@@ -64,9 +64,14 @@ export default function ProfileScreen({ navigation }) {
     }
 
     const updatedData = { fullName, email, phone, dob, gender, address, image };
-    await updateUser(updatedData);
-    setIsEditing(false);
-    Alert.alert('Success', 'Profile updated successfully!');
+    const result = await updateUser(updatedData);
+
+    if (result.success) {
+      Alert.alert('Success', 'Profile updated successfully!');
+      setIsEditing(false);
+    } else {
+      Alert.alert('Error', result.message);
+    }
   };
 
   const handleLogout = async () => {
@@ -75,10 +80,9 @@ export default function ProfileScreen({ navigation }) {
   };
 
   return (
-    <SafeAreaView style={styles.safeContainer} edges={['top', 'right', 'bottom', 'left']}>
+    <SafeAreaView style={styles.safeContainer}>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : null} style={{ flex: 1 }}>
         <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-          
           <View style={{ marginTop: -TOPBAR_OFFSET, alignItems: 'center', marginBottom: 20 }}>
             <TouchableOpacity onPress={pickImage} activeOpacity={0.8} style={styles.imageContainer}>
               <Image
@@ -131,7 +135,6 @@ export default function ProfileScreen({ navigation }) {
               <Text style={styles.buttonText}>Logout</Text>
             </TouchableOpacity>
           </View>
-
         </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>

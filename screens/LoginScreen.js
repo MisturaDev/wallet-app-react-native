@@ -17,13 +17,8 @@ export default function LoginScreen({ navigation }) {
     password: Yup.string().min(4, 'Too Short!').required('Required'),
   });
 
-  const handlePressIn = () => {
-    Animated.spring(scaleAnim, { toValue: 0.95, useNativeDriver: true }).start();
-  };
-
-  const handlePressOut = () => {
-    Animated.spring(scaleAnim, { toValue: 1, useNativeDriver: true }).start();
-  };
+  const handlePressIn = () => Animated.spring(scaleAnim, { toValue: 0.95, useNativeDriver: true }).start();
+  const handlePressOut = () => Animated.spring(scaleAnim, { toValue: 1, useNativeDriver: true }).start();
 
   const handleLogin = async (values) => {
     const { email, password } = values;
@@ -33,7 +28,7 @@ export default function LoginScreen({ navigation }) {
       Toast.show({
         type: 'success',
         text1: 'Login Successful',
-        text2: `Welcome back, ${result.user.fullName}`,
+        text2: `Welcome back, ${result.user.full_name || result.user.email}`,
         position: 'bottom',
       });
       navigation.navigate('Dashboard');
@@ -48,21 +43,13 @@ export default function LoginScreen({ navigation }) {
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={styles.container}
-    >
+    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.container}>
       <View style={styles.card}>
         <Text style={styles.title}>Login</Text>
 
-        <Formik
-          initialValues={{ email: '', password: '' }}
-          validationSchema={LoginSchema}
-          onSubmit={handleLogin}
-        >
+        <Formik initialValues={{ email: '', password: '' }} validationSchema={LoginSchema} onSubmit={handleLogin}>
           {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
             <View>
-              {/* Email input */}
               <TextInput
                 placeholder="Email"
                 style={styles.input}
@@ -73,7 +60,6 @@ export default function LoginScreen({ navigation }) {
               />
               {errors.email && touched.email && <Text style={styles.error}>{errors.email}</Text>}
 
-              {/* Password input with eye toggle */}
               <View style={styles.inputWrapper}>
                 <TextInput
                   placeholder="Password"
@@ -89,19 +75,12 @@ export default function LoginScreen({ navigation }) {
               </View>
               {errors.password && touched.password && <Text style={styles.error}>{errors.password}</Text>}
 
-              {/* Login button */}
               <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
-                <TouchableOpacity
-                  style={styles.button}
-                  onPress={handleSubmit}
-                  onPressIn={handlePressIn}
-                  onPressOut={handlePressOut}
-                >
+                <TouchableOpacity style={styles.button} onPress={handleSubmit} onPressIn={handlePressIn} onPressOut={handlePressOut}>
                   <Text style={styles.buttonText}>Login</Text>
                 </TouchableOpacity>
               </Animated.View>
 
-              {/* Signup link */}
               <TouchableOpacity onPress={() => navigation.navigate('Signup')} style={styles.link}>
                 <Text style={styles.linkText}>Don't have an account? Sign Up</Text>
               </TouchableOpacity>
@@ -116,7 +95,7 @@ export default function LoginScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', padding: 20, backgroundColor: '#f0f4f7' },
-  card: { backgroundColor: '#fff', padding: 25, borderRadius: 15, elevation: 5, shadowColor: '#000', shadowOpacity: 0.1, shadowOffset: { width: 0, height: 2 }, shadowRadius: 5 },
+  card: { backgroundColor: '#fff', padding: 25, borderRadius: 15, elevation: 5 },
   title: { fontSize: 28, fontWeight: 'bold', marginBottom: 20, textAlign: 'center', color: '#333' },
   inputWrapper: { flexDirection: 'row', alignItems: 'center', borderWidth: 1, borderColor: '#ccc', borderRadius: 10, paddingHorizontal: 10, marginBottom: 12, backgroundColor: '#f9f9f9' },
   input: { borderWidth: 1, borderColor: '#ccc', padding: 14, borderRadius: 10, marginBottom: 12, backgroundColor: '#f9f9f9', fontSize: 16 },

@@ -13,30 +13,26 @@ export default function SignupScreen({ navigation }) {
   const [showPassword, setShowPassword] = useState(false);
 
   const SignupSchema = Yup.object().shape({
-    fullName: Yup.string().min(2, 'Too short!').required('Required'),
+    fullName: Yup.string().required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
-    password: Yup.string().min(4, 'Too short!').required('Required'),
+    password: Yup.string().min(4, 'Too Short!').required('Required'),
   });
 
-  const handlePressIn = () => {
-    Animated.spring(scaleAnim, { toValue: 0.95, useNativeDriver: true }).start();
-  };
+  const handlePressIn = () => Animated.spring(scaleAnim, { toValue: 0.95, useNativeDriver: true }).start();
+  const handlePressOut = () => Animated.spring(scaleAnim, { toValue: 1, useNativeDriver: true }).start();
 
-  const handlePressOut = () => {
-    Animated.spring(scaleAnim, { toValue: 1, useNativeDriver: true }).start();
-  };
-
-  const handleSignup = async (values, { resetForm }) => {
-    const result = await signup(values);
+  const handleSignup = async (values) => {
+    const { fullName, email, password } = values;
+    const result = await signup({ fullName, email, password });
 
     if (result.success) {
       Toast.show({
         type: 'success',
         text1: 'Signup Successful',
-        text2: `Welcome, ${result.user.fullName}`,
+        text2: `Welcome, ${result.user.full_name || result.user.email}`,
         position: 'bottom',
       });
-      resetForm();
+
       navigation.navigate('Dashboard');
     } else {
       Toast.show({
@@ -49,21 +45,13 @@ export default function SignupScreen({ navigation }) {
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={styles.container}
-    >
+    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.container}>
       <View style={styles.card}>
-        <Text style={styles.title}>Create Account</Text>
+        <Text style={styles.title}>Sign Up</Text>
 
-        <Formik
-          initialValues={{ fullName: '', email: '', password: '' }}
-          validationSchema={SignupSchema}
-          onSubmit={handleSignup}
-        >
+        <Formik initialValues={{ fullName: '', email: '', password: '' }} validationSchema={SignupSchema} onSubmit={handleSignup}>
           {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
             <View>
-              {/* Full Name */}
               <TextInput
                 placeholder="Full Name"
                 style={styles.input}
@@ -73,7 +61,6 @@ export default function SignupScreen({ navigation }) {
               />
               {errors.fullName && touched.fullName && <Text style={styles.error}>{errors.fullName}</Text>}
 
-              {/* Email */}
               <TextInput
                 placeholder="Email"
                 style={styles.input}
@@ -84,7 +71,6 @@ export default function SignupScreen({ navigation }) {
               />
               {errors.email && touched.email && <Text style={styles.error}>{errors.email}</Text>}
 
-              {/* Password with eye toggle */}
               <View style={styles.inputWrapper}>
                 <TextInput
                   placeholder="Password"
@@ -100,19 +86,12 @@ export default function SignupScreen({ navigation }) {
               </View>
               {errors.password && touched.password && <Text style={styles.error}>{errors.password}</Text>}
 
-              {/* Sign Up button */}
               <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
-                <TouchableOpacity
-                  style={styles.button}
-                  onPress={handleSubmit}
-                  onPressIn={handlePressIn}
-                  onPressOut={handlePressOut}
-                >
+                <TouchableOpacity style={styles.button} onPress={handleSubmit} onPressIn={handlePressIn} onPressOut={handlePressOut}>
                   <Text style={styles.buttonText}>Sign Up</Text>
                 </TouchableOpacity>
               </Animated.View>
 
-              {/* Login link */}
               <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.link}>
                 <Text style={styles.linkText}>Already have an account? Login</Text>
               </TouchableOpacity>
@@ -127,7 +106,7 @@ export default function SignupScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', padding: 20, backgroundColor: '#f0f4f7' },
-  card: { backgroundColor: '#fff', padding: 25, borderRadius: 15, elevation: 5, shadowColor: '#000', shadowOpacity: 0.1, shadowOffset: { width: 0, height: 2 }, shadowRadius: 5 },
+  card: { backgroundColor: '#fff', padding: 25, borderRadius: 15, elevation: 5 },
   title: { fontSize: 28, fontWeight: 'bold', marginBottom: 20, textAlign: 'center', color: '#333' },
   inputWrapper: { flexDirection: 'row', alignItems: 'center', borderWidth: 1, borderColor: '#ccc', borderRadius: 10, paddingHorizontal: 10, marginBottom: 12, backgroundColor: '#f9f9f9' },
   input: { borderWidth: 1, borderColor: '#ccc', padding: 14, borderRadius: 10, marginBottom: 12, backgroundColor: '#f9f9f9', fontSize: 16 },
