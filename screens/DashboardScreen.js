@@ -10,7 +10,7 @@ const { height } = Dimensions.get('window');
 const TOPBAR_OFFSET = height * 0.02;
 
 export default function DashboardScreen({ navigation }) {
-  const { user } = useContext(UserContext); // user profile from 'profiles'
+  const { user } = useContext(UserContext); 
   const { transactions, totalBalance } = useContext(TransactionContext);
 
   const dashboardItems = [
@@ -36,7 +36,7 @@ export default function DashboardScreen({ navigation }) {
     </View>
   );
 
-  // Use actual profile data from UserContext
+  
   const fullName = user?.full_name || 'User';
   const profileImage = user?.profile_pic ? { uri: user.profile_pic } : require('../assets/default-profile.jpg');
 
