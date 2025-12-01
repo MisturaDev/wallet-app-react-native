@@ -1,8 +1,9 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { auth, firestore, storage } from '../firebase';
+import { auth, firestore } from '../firebase';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth';
 import { doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { uploadToCloudinary } from '../utils/cloudinary';
+
 
 export const UserContext = createContext();
 
@@ -79,11 +80,13 @@ export const UserProvider = ({ children }) => {
 
       let profilePicUrl = user.profile_pic || '';
       if (updatedData.image) {
-        const imageRef = ref(storage, `profile_pics/${user.uid}`);
-        const response = await fetch(updatedData.image);
-        const blob = await response.blob();
-        await uploadBytes(imageRef, blob);
-        profilePicUrl = await getDownloadURL(imageRef);
+        // Upload image to Cloudinary
+        const cloudinaryResult = await uploadToCloudinary(updatedData.image);
+        if (cloudinaryResult.success) {
+          profilePicUrl = cloudinaryResult.url;
+        } else {
+          return { success: false, message: 'Image upload failed' };
+        }
       }
 
       await updateDoc(userRef, {
