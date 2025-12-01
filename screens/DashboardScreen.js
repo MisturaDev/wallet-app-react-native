@@ -22,7 +22,8 @@ export default function DashboardScreen({ navigation }) {
     { name: 'Buy Data', icon: 'wifi-outline', action: () => navigation.navigate('Data') },
   ];
 
-  const lastTransactions = transactions.slice(-4).reverse();
+  // Always take the latest 4 transactions
+  const lastTransactions = [...transactions].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 4);
 
   const formatNaira = (amount) =>
     `₦${amount.toLocaleString('en-NG', { minimumFractionDigits: 2 })}`;
@@ -36,7 +37,6 @@ export default function DashboardScreen({ navigation }) {
     </View>
   );
 
-  
   const fullName = user?.full_name || 'User';
   const profileImage = user?.profile_pic ? { uri: user.profile_pic } : require('../assets/default-profile.jpg');
 
