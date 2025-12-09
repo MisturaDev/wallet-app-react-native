@@ -79,19 +79,19 @@ TurahPay allows users to securely manage their wallet, perform transactions and 
 
 ## Usage
 
-Open the app via Expo
+- Open the app via Expo
 
-Sign up or login with your credentials
+- Sign up or login with your credentials
 
-Access dashboard features: Add/Send Money, Pay Bills, Buy Airtime/Data
+- Access dashboard features: Add/Send Money, Pay Bills, Buy Airtime/Data
 
-Update profile info and upload profile picture
+- Update profile info and upload profile picture
 
    
 ---
 
 ## Links
-Expo Dashboard: https://expo.dev/accounts/misturadev
+Expo Dashboard: [Expo Go](https://expo.dev/accounts/misturadev)
 
 ---
 
