@@ -26,3 +26,35 @@ Cross-platform: Works on iOS and Android via Expo
 
 
 --
+
+## Tech Stack
+
+Framework: React Native
+
+Expo: Managed workflow for cross-platform development
+
+Programming Language: JavaScript
+
+Backend & Database: Firebase Authentication & Firestore
+
+State Management: React Context API
+
+UI & Animation: React Native components, LinearGradient, MaterialCommunityIcons, Animated API
+
+HTTP Requests: Axios
+
+Storage: Firebase Storage for images
+
+Version Control: Git & GitHub
+
+
+## Screenshots
+
+---
+
+## 
+
+
+
+
+
