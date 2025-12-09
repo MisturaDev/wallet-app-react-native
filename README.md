@@ -12,40 +12,40 @@ TurahPay allows users to securely manage their wallet, perform transactions and 
 
 ## Features
 
-Login & Signup with validation
+- Login & Signup with validation
 
-Dashboard: view wallet balance & recent transactions
+- Dashboard: view wallet balance & recent transactions
 
-Profile Management: edit user info and profile picture
+- Profile Management: edit user info and profile picture
 
-Transaction Features: Add Money, Send Money, Pay Bills, Buy Airtime & Data
+- Transaction Features: Add Money, Send Money, Pay Bills, Buy Airtime & Data
 
-Firebase Backend: Authentication & Firestore for real-time data
+- Firebase Backend: Authentication & Firestore for real-time data
 
-Cross-platform: Works on iOS and Android via Expo
+- Cross-platform: Works on iOS and Android via Expo
 
 
---
+---
 
 ## Tech Stack
 
-Framework: React Native
+- Framework: React Native
 
-Expo: Managed workflow for cross-platform development
+- Expo: Managed workflow for cross-platform development
 
-Programming Language: JavaScript
+- Programming Language: JavaScript
 
-Backend & Database: Firebase Authentication & Firestore
+- Backend & Database: Firebase Authentication & Firestore
 
-State Management: React Context API
+- State Management: React Context API
 
-UI & Animation: React Native components, LinearGradient, MaterialCommunityIcons, Animated API
+- UI & Animation: React Native components, LinearGradient, MaterialCommunityIcons, Animated API
 
-HTTP Requests: Axios
+- HTTP Requests: Axios
 
-Storage: Firebase Storage for images
+- Storage: Cloudinary & Firebase Storage for images
 
-Version Control: Git & GitHub
+- Version Control: Git & GitHub
 
 
 ## Screenshots
