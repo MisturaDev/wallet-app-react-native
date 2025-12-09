@@ -75,7 +75,7 @@ TurahPay allows users to securely manage their wallet, perform transactions and 
 
 5. Run the app (Expo):
    ```bash
-   npm expo start 
+   npx expo start 
 
 
  ---
