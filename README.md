@@ -67,15 +67,25 @@ Version Control: Git & GitHub
     npm install
 
 4. Configure Firebase:
-     Create a Firebase project
-     Copy your config into firebase.js
+- Create a Firebase project
+- Copy your config into firebase.js
 
 5. Run the app (Expo):
    ```bash
    npm expo start 
 
-     
 
+ ---
+
+## Usage
+
+Open the app via Expo
+
+Sign up or login with your credentials
+
+Access dashboard features: Add/Send Money, Pay Bills, Buy Airtime/Data
+
+Update profile info and upload profile picture
 
    
 
