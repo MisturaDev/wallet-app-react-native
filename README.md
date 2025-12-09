@@ -47,6 +47,7 @@ TurahPay allows users to securely manage their wallet, perform transactions and 
 
 - Version Control: Git & GitHub
 
+---
 
 ## Screenshots
 
