@@ -1,6 +1,6 @@
 # TurahPay Wallet App
 
-A cross-platform mobile wallet app built with React Native and Expo for managing finances and transactions, integrating Firebase for authentication and data management.
+A cross-platform mobile wallet app built with **React Native** and **Expo** for managing finances and transactions, integrating **Firebase** for authentication and data management.
 
 ---
 
@@ -91,7 +91,7 @@ TurahPay allows users to securely manage their wallet, perform transactions and 
 ---
 
 ## Links
-Expo Dashboard: [Expo Go](https://expo.dev/accounts/misturadev)
+Expo Dashboard: [Expo](https://expo.dev/accounts/misturadev)
 
 ---
 
