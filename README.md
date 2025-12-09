@@ -95,7 +95,13 @@ Expo Dashboard: https://expo.dev/accounts/misturadev
 
 ---
 
-## 
+## Developer
+
+**Mistura Ishola**
+
+ [LinkedIn](https://www.linkedin.com/in/mistura-ishola/)
+
+
 
 
 
