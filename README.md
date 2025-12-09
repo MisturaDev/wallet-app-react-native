@@ -54,21 +54,30 @@ Version Control: Git & GitHub
 
 ## Installation
 
-Clone the repository:
-```bash
+1. Clone the repository:
+   ```bash
    git clone https://github.com/MisturaDev/wallet-app-react-native.git
 
- 2. Navigate into the project folder:
+2. Navigate into the project folder:
     ```bash
     cd my-portfolio
 
- 3. Install dependencies.:
+3. Install dependencies.:
     ```bash
     npm install
 
-  4. Run the app:
-     ```bash
-     npm run dev
+4. Configure Firebase:
+     Create a Firebase project
+     Copy your config into firebase.js
+
+5. Run the app (Expo):
+   ```bash
+   npm expo start 
+
+     
+
+
+   
 
 
 
