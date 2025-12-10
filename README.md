@@ -29,23 +29,23 @@ A cross-platform mobile wallet app built with **React Native** and **Expo** for 
 
 ## Tech Stack
 
-- Framework: React Native
+- **Framework**: React Native
 
-- Expo: Managed workflow for cross-platform development
+- **Expo**: Managed workflow for cross-platform development
 
-- Programming Language: JavaScript
+- **Programming Language**: JavaScript
 
-- Backend & Database: Firebase Authentication & Firestore
+- **Backend & Database**: Firebase Authentication & Firestore
 
-- State Management: React Context API
+- **State Management**: React Context API
 
-- UI & Animation: React Native components, LinearGradient, MaterialCommunityIcons, Animated API
+- **UI & Animation**: React Native components, LinearGradient, MaterialCommunityIcons, Animated API
 
-- HTTP Requests: Axios
+- **HTTP Requests**: Axios
 
-- Storage: Cloudinary & Firebase Storage for images
+- **Storage**: Cloudinary & Firebase Storage for images
 
-- Version Control: Git & GitHub
+- **Version Control**: Git & GitHub
 
 ---
 
