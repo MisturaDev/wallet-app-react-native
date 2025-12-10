@@ -18,11 +18,11 @@ A cross-platform mobile wallet app built with **React Native** and **Expo** for 
 
 - **Profile Management**: Edit user info and profile picture
 
-- Transaction Features: Add Money, Send Money, Pay Bills, Buy Airtime & Data
+- **Transaction Features**: Add Money, Send Money, Pay Bills, Buy Airtime & Data
 
-- Firebase Backend: Authentication & Firestore for real-time data
+- **Firebase Backend**: Authentication & Firestore for real-time data
 
-- Cross-platform: Works on iOS and Android via Expo
+- **Cross-platform**: Works on iOS and Android via Expo
 
 
 ---
