@@ -63,7 +63,7 @@ A cross-platform mobile wallet app built with **React Native** and **Expo** for 
 
 2. Navigate into the project folder:
     ```bash
-    cd my-portfolio
+    cd wallet-app
 
 3. Install dependencies.:
     ```bash
