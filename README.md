@@ -14,9 +14,9 @@ A cross-platform mobile wallet app built with **React Native** and **Expo** for 
 
 - **Login** & **Signup** with validation
 
-- Dashboard: view wallet balance & recent transactions
+- **Dashboard**: View wallet balance & recent transactions
 
-- Profile Management: edit user info and profile picture
+- **Profile Management**: Edit user info and profile picture
 
 - Transaction Features: Add Money, Send Money, Pay Bills, Buy Airtime & Data
 
