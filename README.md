@@ -51,7 +51,26 @@ A cross-platform mobile wallet app built with **React Native** and **Expo** for 
 
 ## Screenshots
 
- coming up soon...
+| Login Screen | Signup Screen |
+|--------------|---------------|
+| ![Login Screen](screenshots/Login Screen.jpg) | ![Signup Screen](screenshots/Sign up Screen.jpg) |
+
+| Dashboard Screen | Profile Screen |
+|-----------|----------------|
+| ![Dashboard Screen](screenshots/Dashboard Screen.jpg) | ![Profile Screen](screenshots/Profile Screen.jpg) |
+
+| Add Money | Send Money |
+|-----------|-----------|
+| ![Add Money](screenshots/Add Money.jpg) | ![Send Money](screenshots/Send Money.jpg) |
+
+| Airtime Screen | Data Screen |
+|-----------|-----------|
+| ![Airtime Screen](screenshots/Airtime Screen.jpg) | ![Data Screen](screenshots/Data Screen.jpg) |
+
+| Pay Bills Screen | Transaction History |
+|-----------|-------------------|
+| ![Pay Bills](screenshots/Pay Bills Screen.jpg) | ![Transaction History](screenshots/Transaction Screen.jpg) |
+
  
 ---
 
