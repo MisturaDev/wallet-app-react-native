@@ -53,25 +53,25 @@ A cross-platform mobile wallet app built with **React Native** and **Expo** for 
 
 | Login Screen | Signup Screen |
 |--------------|---------------|
-| ![Login Screen](screenshots/Login Screen.jpg) | ![Signup Screen](screenshots/Sign up Screen.jpg) |
+| ![Login Screen](screenshots/Login.jpg) | ![Signup Screen](screenshots/Signup.jpg) |
 
 | Dashboard Screen | Profile Screen |
-|-----------|----------------|
-| ![Dashboard Screen](screenshots/Dashboard Screen.jpg) | ![Profile Screen](screenshots/Profile Screen.jpg) |
+|-----------------|----------------|
+| ![Dashboard Screen](screenshots/Dashboard.jpg) | ![Profile Screen](screenshots/Profile.jpg) |
 
 | Add Money | Send Money |
-|-----------|-----------|
-| ![Add Money](screenshots/Add Money.jpg) | ![Send Money](screenshots/Send Money.jpg) |
+|-----------|------------|
+| ![Add Money](screenshots/AddMoney.jpeg) | ![Send Money](screenshots/SendMoney.jpeg) |
 
 | Airtime Screen | Data Screen |
-|-----------|-----------|
-| ![Airtime Screen](screenshots/Airtime Screen.jpg) | ![Data Screen](screenshots/Data Screen.jpg) |
+|----------------|------------|
+| ![Airtime Screen](screenshots/Airtime.jpg) | ![Data Screen](screenshots/Data.jpg) |
 
 | Pay Bills Screen | Transaction History |
-|-----------|-------------------|
-| ![Pay Bills](screenshots/Pay Bills Screen.jpg) | ![Transaction History](screenshots/Transaction Screen.jpg) |
+|-----------------|-------------------|
+| ![Pay Bills Screen](screenshots/PayBills.jpg) | ![Transaction History](screenshots/TransactionHistory.jpg) |
 
- 
+
 ---
 
 ## Installation
