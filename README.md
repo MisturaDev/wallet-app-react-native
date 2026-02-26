@@ -1,12 +1,12 @@
+![React Native](https://img.shields.io/badge/React_Native-0.71-blue?logo=react)
+![Expo](https://img.shields.io/badge/Expo-000020?logo=expo&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-ffca28?logo=firebase&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 # TurahPay Wallet App
 
-A cross-platform mobile wallet app built with **React Native** and **Expo** for managing finances and transactions, integrating **Firebase** for authentication and data management.
-
----
-
-## Overview
-
-**TurahPay Wallet App** allows users to securely manage their wallet, perform transactions and track recent activity. It includes login/signup with validation, a dynamic dashboard and profile management.
+**TurahPay Wallet App** is a cross-platform mobile wallet built with React Native and Expo, integrating Firebase for authentication and data management. It allows users to securely manage their wallet, perform transactions, track recent activity and includes login/signup with validation, a dynamic dashboard and profile management.
 
 ---
 
